@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sante — IT Inventory Verification (Security Simulation)</title>
+  <style>
+    :root {
+      --brand: #0a58ca;
+      --muted: #555;
+      --bg: #f6f8fb;
+      --card-bg: #fff;
+      --radius: 12px;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: var(--font);
+      color: #111;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), #2764d2);
+      color: #fff;
+      font-weight: bold;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(10, 88, 202, 0.25);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      color: #111;
+    }
+
+    p.lead {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 6px 0 18px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .asset-box {
+      background: #f9fbff;
+      border: 1px solid #e2ecff;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .cta:hover,
+    .btn:hover {
+      background: #0847a3;
+    }
+
+    .notice {
+      background: #fff8e6;
+      border-left: 5px solid #ffc107;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 18px;
+      font-size: 0.95rem;
+    }
+
+    h3, h4 {
+      color: #0b223a;
+      margin-bottom: 8px;
+    }
+
+    ul, ol {
+      margin: 0 0 0 20px;
+      padding: 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .do, .dont {
+      padding: 14px;
+      border-radius: 10px;
+    }
+
+    .do {
+      background: #f0fff7;
+      border: 1px solid #d7f3e2;
+    }
+
+    .dont {
+      background: #fff5f5;
+      border: 1px solid #ffdede;
+    }
+
+    .btn {
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    img.illustration {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      .card {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      body {
+        font-size: 0.95rem;
+      }
+      .cta, .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .quiz {
+      margin-top: 24px;
+    }
+    .result {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    .good {
+      background: #e8fff1;
+      border: 1px solid #b6f0c7;
+    }
+    .bad {
+      background: #fff2f2;
+      border: 1px solid #ffcccc;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <header>
+        <div class="logo">S</div>
+        <div>
+          <h1>Sante — Phishing Email Awareness</h1>
+          <p class="lead">This page is part of an authorized IT Security simulation designed to raise phishing awareness.</p>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <div class="asset-box">
+            <strong>What you clicked:</strong>
+            <p class="muted">The email asked you to verify <strong>[[# of assets]]</strong> asset(s) assigned to you. Report ID: <strong>[[ReportID]]</strong>.</p>
+            <a href="#" class="cta">Open view-only asset list →</a>
+            <div class="notice"><strong>Note:</strong> This was a <strong>simulated exercise</strong>. You didn’t provide real credentials or sensitive data.</div>
+          </div>
+
+          <div class="section">
+            <h3>Why this test matters</h3>
+            <p class="muted">Phishing messages often mimic internal communications like audits or device verifications. Recognizing small details—sender, link, tone—prevents real breaches.</p>
+          </div>
+
+          <div class="grid-2">
+            <div class="do">
+              <h4>✅ URL Do’s</h4>
+              <ul>
+                <li>Hover links to check the real destination.</li>
+                <li>Ensure the domain is exactly <code>sante.com</code>.</li>
+                <li>Access portals manually when unsure.</li>
+                <li>Check HTTPS and the padlock icon.</li>
+              </ul>
+            </div>
+            <div class="dont">
+              <h4>❌ URL Don’ts</h4>
+              <ul>
+                <li>Don’t trust the display text only.</li>
+                <li>Avoid shortened links for important tasks.</li>
+                <li>Beware of lookalike domains.</li>
+                <li>Never rush when a message sounds urgent.</li>
+              </ul>
+            </div>
+          </div>
+    <!--
+          <aside>
+          <img class="illustration" src="securit2.png" alt="Phishing awareness illustration">
+     
+ <p class="muted"><strong>Need help?</strong> Contact <a href="mailto:assets@sante.com">assets@sante.com</a> or call extension [[ContactExt]].</p> -->
+        </aside>
+          <!------>
+       
+<h3>Phishing Awareness — URL Do’s & Don’ts Quiz</h3>
+<form id="urlQuiz" onsubmit="return false;">
+  <div class="question">
+    <p><strong>1.</strong> Which is the safest way to check where a link actually leads before clicking it?</p>
+    <label><input type="radio" name="q1" value="A"> Click the link to see where it goes</label><br>
+    <label><input type="radio" name="q1" value="B"> Hover over the link to view the real destination</label><br>
+    <label><input type="radio" name="q1" value="C"> Copy and paste the link into a random browser</label><br>
+    <label><input type="radio" name="q1" value="D"> Trust the text displayed in the email</label>
+  </div>
+
+  <div class="question">
+    <p><strong>2.</strong> You receive an email from “support-sante.com” asking you to log in. What should you do first?</p>
+    <label><input type="radio" name="q2" value="A"> Log in immediately since it mentions “sante”</label><br>
+    <label><input type="radio" name="q2" value="B"> Reply asking for confirmation</label><br>
+    <label><input type="radio" name="q2" value="C"> Check that the domain is exactly <code>sante.com</code></label><br>
+    <label><input type="radio" name="q2" value="D"> Ignore the email without checking anything</label>
+  </div>
+
+  <div class="question">
+    <p><strong>3.</strong> Which of the following is a clear warning sign that a link might be part of a phishing attempt?</p>
+    <label><input type="radio" name="q3" value="A"> The email includes your name correctly</label><br>
+    <label><input type="radio" name="q3" value="B"> The link is shortened (e.g., bit.ly / tinyurl)</label><br>
+    <label><input type="radio" name="q3" value="C"> The email uses your official signature</label><br>
+    <label><input type="radio" name="q3" value="D"> The email includes the company logo</label>
+  </div>
+
+  <button class="btn" onclick="gradeUrlQuiz()">Submit Answers</button>
+  <div id="urlQuizResult" class="result" style="display:none;"></div>
+</form>
+
+<style>
+  .correct { background-color: #e8fff1; border-radius: 6px; }
+  .incorrect { background-color: #ffecec; border-radius: 6px; }
+  .explanation { font-size: 0.9rem; color: #444; margin-top: 4px; }
+  .question { margin-bottom: 18px; }
+</style>
+          <!---->
+<!-- 
+          <div class="section quiz">
+            <h3>Quick quiz (1 minute)</h3>
+            <form id="quizForm" onsubmit="return false">
+              <p><strong>1.</strong> The safest way to verify a link is:</p>
+              <label><input type="radio" name="q1" value="a"> Click it to check.</label><br>
+              <label><input type="radio" name="q1" value="b"> Hover to see the actual URL. ✅</label><br>
+              <label><input type="radio" name="q1" value="c"> Trust the display text.</label>
+
+              <p><strong>2.</strong> You get an unexpected email asking for device serials. You should:</p>
+              <label><input type="radio" name="q2" value="a"> Reply with details.</label><br>
+              <label><input type="radio" name="q2" value="b"> Verify via IT ticket or call. ✅</label><br>
+              <label><input type="radio" name="q2" value="c"> Forward it to friends.</label>
+
+              <p><strong>3.</strong> You clicked a link but didn’t enter info. You should:</p>
+              <label><input type="radio" name="q3" value="a"> Report via “Report Phish.” ✅</label><br>
+              <label><input type="radio" name="q3" value="b"> Ignore it.</label><br>
+              <label><input type="radio" name="q3" value="c"> Change all passwords immediately.</label>
+
+              <button class="btn" onclick="gradeQuiz()">Submit Answers</button>
+              <div id="quizResult" class="result" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+      -->
+        
+      </section>
+
+      <footer>
+        <img width="220px" src="sante.png" alt="Phishing awareness illustration">
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    /* function gradeUrlQuiz() {
+    const answers = { q1: 'B', q2: 'C', q3: 'B' };
+    let score = 0;
+    for (let q in answers) {
+      const chosen = document.querySelector(`input[name="${q}"]:checked`);
+      if (chosen && chosen.value === answers[q]) score++;
+    }
+    const box = document.getElementById("urlQuizResult");
+    box.style.display = "block";
+    box.className = "result " + (score === 3 ? "good" : "bad");
+    box.innerHTML = score === 3
+      ? "<strong>Excellent!</strong> You answered all questions correctly — you know how to check URLs safely!"
+      : `<strong>Score:</strong> ${score}/3<br>Review the URL Do’s & Don’ts above and try again.`;
+  }
+*/
+
+
+  function gradeUrlQuiz() {
+    const answers = {
+      q1: { correct: 'B', explain: 'Always hover over links to preview their actual destination — never rely on the text shown.' },
+      q2: { correct: 'C', explain: 'Attackers often use lookalike domains like “support-sante.com.” Verify it’s exactly sante.com.' },
+      q3: { correct: 'B', explain: 'Shortened URLs hide the real destination and are often used in phishing attempts.' }
+    };
+    let score = 0;
+
+    // Reset previous highlights
+    document.querySelectorAll('label').forEach(l => {
+      l.classList.remove('correct', 'incorrect');
+    });
+    document.querySelectorAll('.explanation').forEach(e => e.remove());
+
+    for (let q in answers) {
+      const correct = answers[q].correct;
+      const selected = document.querySelector(`input[name="${q}"]:checked`);
+      const options = document.querySelectorAll(`input[name="${q}"]`);
+      let isCorrect = selected && selected.value === correct;
+      if (isCorrect) score++;
+
+      options.forEach(opt => {
+        const label = opt.parentElement;
+        if (opt.value === correct) {
+          label.classList.add('correct');
+        } else if (selected && opt.value === selected.value && opt.value !== correct) {
+          label.classList.add('incorrect');
+        }
+      });
+
+      // Add explanation under the question
+      const questionDiv = document.querySelector(`input[name="${q}"]`).closest('.question');
+      const exp = document.createElement('div');
+      exp.classList.add('explanation');
+      exp.innerHTML = `<strong>Explanation:</strong> ${answers[q].explain}`;
+      questionDiv.appendChild(exp);
+    }
+
+    // Show result summary
+    const box = document.getElementById("urlQuizResult");
+    box.style.display = "block";
+    box.className = "result " + (score === 3 ? "good" : "bad");
+    box.innerHTML = score === 3
+      ? "<strong>Excellent!</strong> You got all 3 answers correct — great awareness of phishing red flags! 🎉"
+      : `<strong>Score:</strong> ${score}/3<br>Review the highlighted answers and read the explanations above.`;
+  }
+
+
+    /*
+    function gradeQuiz() {
+      const answers = { q1: 'b', q2: 'b', q3: 'a' };
+      let score = 0;
+      for (let q in answers) {
+        const chosen = document.querySelector(`input[name="${q}"]:checked`);
+        if (chosen && chosen.value === answers[q]) score++;
+      }
+      const box = document.getElementById("quizResult");
+      box.style.display = "block";
+      box.className = "result " + (score === 3 ? "good" : "bad");
+      box.innerHTML = score === 3
+        ? "<strong>Excellent!</strong> You spotted every correct answer."
+        : `<strong>Score:</strong> ${score}/3. Review the tips above and try again.`;
+    }
+        */
+  </script>
+</body>
+</html>
